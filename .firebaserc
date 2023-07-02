@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "resume-b200f": {
+      "hosting": {
+        "resume": [
+          "resume-b200f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "resume-b200f"
+  }
+}
