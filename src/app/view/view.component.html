@@ -1,4 +1,4 @@
-<div class="container mx-auto px-4 py-8 flex flex-col gap-12 font-primary">
+<div class="container mx-auto px-4 py-8 flex flex-col gap-12 font-primary" #pdfContent>
 
   <!-- Header -->
   <div class="flex flex-row justify-between">
@@ -90,3 +90,8 @@
   </div>
 
 </div>
+
+<button class="fixed bottom-4 right-4 px-2 bg-black hover:opacity-75 transition text-white rounded"
+  (click)="generatePDF()">
+  PDF
+</button>
