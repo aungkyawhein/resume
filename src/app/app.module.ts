@@ -5,10 +5,14 @@ import { firebaseConfig } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EditComponent } from './edit/edit.component';
+import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditComponent,
+    ViewComponent
   ],
   imports: [
     provideFirebaseApp(() => initializeApp(firebaseConfig)),

@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'resume';
+  navLinks = [
+    {
+      name: 'View',
+      url: '/view'
+    },
+    {
+      name: 'Edit',
+      url: '/edit'
+    }
+  ];
 }
