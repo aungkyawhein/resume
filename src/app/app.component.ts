@@ -14,6 +14,13 @@ export class AppComponent {
     {
       name: 'Edit',
       url: '/edit'
+    },
+  ];
+
+  otherLinks = [
+    {
+      name: 'Github',
+      url: 'https://github.com/aungkyawhein/resume'
     }
   ];
 }

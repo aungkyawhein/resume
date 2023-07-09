@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ContactInfo, Education, EmploymentHistory, Intro, Skills } from '../data.model';
 import { DataService } from '../data.service';
+import { PdfService } from '../pdf.service';
 
 @Component({
   selector: 'app-view',
@@ -8,6 +9,8 @@ import { DataService } from '../data.service';
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent {
+  @ViewChild('pdfContent') pdfContent!: ElementRef;
+
   name: string = '';
   jobTitle: string = '';
   logo: string = '';
@@ -34,7 +37,10 @@ export class ViewComponent {
     list: []
   };
 
-  constructor(private dataService: DataService) {
+  constructor(
+    private pdfService: PdfService,
+    private dataService: DataService
+  ) {
 
   }
 
@@ -57,5 +63,11 @@ export class ViewComponent {
     this.employmentHistory = employmentHistory;
     this.education = education;
     this.skills = skills;
+  }
+
+  generatePDF(): void {
+    const pageContent = this.pdfContent.nativeElement;
+    const filename = this.name + '.pdf';
+    this.pdfService.generatePDF(pageContent, filename);
   }
 }
