@@ -22,4 +22,5 @@ jobs:
         
       - name: Deploy to Firebase Hosting        
         run: |
+          firebase use --token ${{ secrets.FIREKEY }}
           firebase deploy --token ${{ secrets.FIREKEY }} --only hosting
