@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/firebase-deploy@v1
+      - uses: actions/resume@v1
         with:
           args: deploy --only hosting
+          firebase_token: ${{ secrets.FIREKEY }}
