@@ -2,7 +2,7 @@ import { writeFile } from 'fs';
 
 const targetPath = './src/environments/environment.prod.ts';
 
-const envConfigFile = `export const firebaseConfig = JSON.parse('${process.env.FIREBASE_CONFIG}')`;
+const envConfigFile = `export const firebaseConfig = ${process.env.FIREBASE_CONFIG}`;
 
 writeFile(targetPath, envConfigFile, 'utf8', (err) => {
   if (err) {
