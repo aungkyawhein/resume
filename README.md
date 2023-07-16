@@ -1,5 +1,7 @@
 # Resume
 
+[![Deploy to Firebase Hosting on merge](https://github.com/aungkyawhein/resume/actions/workflows/firebase-hosting-deploy.yml/badge.svg)](https://github.com/aungkyawhein/resume/actions/workflows/firebase-hosting-deploy.yml)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
 
 ## Development server
