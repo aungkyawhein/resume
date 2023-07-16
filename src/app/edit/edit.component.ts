@@ -59,7 +59,7 @@ export class EditComponent {
     this.jobTitle = jobTitle;
     this.logo = logo;
     this.contactInfo = contactInfo;
-    this.intro = intro;
+    this.intro = { ...intro };
     this.employmentHistory = employmentHistory;
     this.education = education;
     this.skills = skills;
@@ -71,6 +71,7 @@ export class EditComponent {
         ...this.data,
         name: this.name,
         jobTitle: this.jobTitle,
+        intro: { ...this.intro },
       }
     );
     this.goToView();
