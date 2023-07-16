@@ -4,4 +4,4 @@
  * to deploy to Firebase
  */
 
-export const firebaseConfig = JSON.parse('$FIREBASE_CONFIG');
+export const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
