@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ContactInfo, Data, Education, EmploymentHistory, Intro, Skills } from '../data.model';
+import { ContactInfo, Data, Education, Employment, EmploymentHistory, Intro, Skills } from '../data.model';
 import { DataService } from '../data.service';
 
 @Component({
@@ -64,7 +64,7 @@ export class EditComponent {
     this.logo = logo;
     this.contactInfo = { ...contactInfo };
     this.intro = { ...intro };
-    this.employmentHistory = employmentHistory;
+    this.employmentHistory = { ...employmentHistory };
     this.education = { ...education };
     this.skills = { ...skills };
     this.skillsList = this.skills.list.join(',');
@@ -81,6 +81,26 @@ export class EditComponent {
     this.contactInfo.list.splice(index, 1);
   }
 
+  addNewEmployment(): void {
+    this.employmentHistory.list.push({
+      duration: '',
+      jobTitle: '',
+      responsibilities: ['']
+    });
+  }
+
+  removeEmployment(index: number): void {
+    this.employmentHistory.list.splice(index, 1);
+  }
+
+  addResponsibility(job: Employment): void {
+    job.responsibilities.push('');
+  }
+
+  removeResponsibility(job: Employment, index: number): void {
+    job.responsibilities.splice(index, 1);
+  }
+
   onSkillsUpdate(): void {
     this.skills.list = this.skillsList.split(',');
   }
@@ -93,6 +113,7 @@ export class EditComponent {
         jobTitle: this.jobTitle,
         contactInfo: { ...this.contactInfo },
         intro: { ...this.intro },
+        employmentHistory: { ...this.employmentHistory },
         education: { ...this.education },
         skills: { ...this.skills },
       }
