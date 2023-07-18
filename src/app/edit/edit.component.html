@@ -29,6 +29,8 @@
           </label>
         </div>
       </div>
+
+      <!-- Intro -->
       <div class="max-w-full">
         <div class="grid grid-cols-1 gap-6">
           <h3 class="text-2xl font-bold border-b-2 border-gray-600">Intro</h3>
@@ -58,6 +60,75 @@
           </label>
         </div>
       </div>
+
+      <!-- Education -->
+      <div class="max-w-full">
+        <div class="grid grid-cols-1 gap-6">
+          <h3 class="text-2xl font-bold border-b-2 border-gray-600">Education</h3>
+          <label class="block max-w-md">
+            <span class="text-gray-700">Title</span>
+            <input type="text" name="educationTitle" required [(ngModel)]="education.title" placeholder="" class="
+            mt-1
+            block
+            w-full
+            rounded-md
+            border-gray-300
+            shadow-sm
+            focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+          ">
+          </label>
+          <label class="block max-w-md">
+            <span class="text-gray-700">Duration</span>
+            <input type="text" name="educationDuration" required [(ngModel)]="education.duration" placeholder="" class="
+            mt-1
+            block
+            w-full
+            rounded-md
+            border-gray-300
+            shadow-sm
+            focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+          ">
+          </label>
+          <label class="block max-w-md">
+            <span class="text-gray-700">University / Institute</span>
+            <input type="text" name="educationUniversity" required [(ngModel)]="education.university" placeholder=""
+              class="
+            mt-1
+            block
+            w-full
+            rounded-md
+            border-gray-300
+            shadow-sm
+            focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+          ">
+          </label>
+          <label class="block max-w-md">
+            <span class="text-gray-700">Degree</span>
+            <input type="text" name="educationDegree" required [(ngModel)]="education.degree" placeholder="" class="
+            mt-1
+            block
+            w-full
+            rounded-md
+            border-gray-300
+            shadow-sm
+            focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+          ">
+          </label>
+          <label class="block max-w-md">
+            <span class="text-gray-700">Others (e.g., honours)</span>
+            <input type="text" name="educationExtra" required [(ngModel)]="education.extra" placeholder="" class="
+            mt-1
+            block
+            w-full
+            rounded-md
+            border-gray-300
+            shadow-sm
+            focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+          ">
+          </label>
+        </div>
+      </div>
+
       <div class="max-w-full sticky bottom-0 bg-white py-4">
         <button type="submit" class="px-4 py-2 rounded text-white bg-gray-600">Update</button>
       </div>
