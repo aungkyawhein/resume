@@ -1,16 +1,18 @@
 <nav class="w-full flex justify-end bg-black/25">
-  <ul class="flex justify-end gap-2 container py-2 mx-auto">
-    <li *ngFor="let navLink of navLinks">
-      <a [routerLink]="navLink.url" routerLinkActive="text-gray-500 " ariaCurrentWhenActive="page">
-        {{navLink.name}}
-      </a>
-    </li>
-    <li *ngFor="let link of otherLinks">
-      <a [href]="link.url" target="_blank">
-        {{link.name}}
-      </a>
-    </li>
-  </ul>
+  <div class="container mx-auto px-4 flex flex-col gap-12 font-primary">
+    <ul class="flex justify-end gap-2 container py-2 mx-auto">
+      <li *ngFor="let navLink of navLinks">
+        <a [routerLink]="navLink.url" routerLinkActive="text-gray-500 " ariaCurrentWhenActive="page">
+          {{navLink.name}}
+        </a>
+      </li>
+      <li *ngFor="let link of otherLinks">
+        <a [href]="link.url" target="_blank">
+          {{link.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <router-outlet></router-outlet>
