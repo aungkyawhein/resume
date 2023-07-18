@@ -35,6 +35,7 @@ export class EditComponent {
     title: '',
     list: []
   };
+  skillsList = '';
 
   constructor(
     private dataService: DataService,
@@ -62,7 +63,12 @@ export class EditComponent {
     this.intro = { ...intro };
     this.employmentHistory = employmentHistory;
     this.education = { ...education };
-    this.skills = skills;
+    this.skills = { ...skills };
+    this.skillsList = this.skills.list.join(',');
+  }
+
+  onSkillsUpdate(): void {
+    this.skills.list = this.skillsList.split(',');
   }
 
   onSubmit(): void {
@@ -73,6 +79,7 @@ export class EditComponent {
         jobTitle: this.jobTitle,
         intro: { ...this.intro },
         education: { ...this.education },
+        skills: { ...this.skills },
       }
     );
     this.goToView();
