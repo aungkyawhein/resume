@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ContactInfo, Data, Education, EmploymentHistory, Intro, Skills } from '../data.model';
 import { DataService } from '../data.service';
@@ -16,6 +17,7 @@ export class EditComponent {
   contactInfo: ContactInfo = {
     list: [],
   };
+  contactInfoFormGroup = FormGroup;
   intro: Intro = {
     title: '',
     description: ''
@@ -40,6 +42,7 @@ export class EditComponent {
   constructor(
     private dataService: DataService,
     private router: Router,
+    private formBuilder: FormBuilder,
   ) {
 
   }
@@ -59,12 +62,23 @@ export class EditComponent {
     this.name = name;
     this.jobTitle = jobTitle;
     this.logo = logo;
-    this.contactInfo = contactInfo;
+    this.contactInfo = { ...contactInfo };
     this.intro = { ...intro };
     this.employmentHistory = employmentHistory;
     this.education = { ...education };
     this.skills = { ...skills };
     this.skillsList = this.skills.list.join(',');
+  }
+
+  addNewContactInfo(): void {
+    this.contactInfo.list.push({
+      name: '',
+      value: '',
+    });
+  }
+
+  removeContactInfo(index: number): void {
+    this.contactInfo.list.splice(index, 1);
   }
 
   onSkillsUpdate(): void {
@@ -77,6 +91,7 @@ export class EditComponent {
         ...this.data,
         name: this.name,
         jobTitle: this.jobTitle,
+        contactInfo: { ...this.contactInfo },
         intro: { ...this.intro },
         education: { ...this.education },
         skills: { ...this.skills },

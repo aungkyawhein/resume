@@ -1,32 +1,76 @@
 <div class="container mx-auto px-4 py-8 flex flex-col gap-12 font-primary">
   <form (ngSubmit)="onSubmit()" #resumeForm="ngForm">
     <div class="grid grid-cols-1 gap-10">
+
       <div class="max-w-md">
         <div class="grid grid-cols-1 gap-6">
           <label class="block">
             <span class="text-gray-700">Name</span>
             <input type="text" id="name" name="name" required [(ngModel)]="name" placeholder="" class="
-            mt-1
-            block
-            w-full
-            rounded-md
-            border-gray-300
-            shadow-sm
-            focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
-          ">
+              mt-1
+              block
+              w-full
+              rounded-md
+              border-gray-300
+              shadow-sm
+              focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+            ">
           </label>
           <label class="block">
             <span class="text-gray-700">Job Title</span>
             <input type="text" id="jobTitle" name="jobTitle" [(ngModel)]="jobTitle" placeholder="" class="
-            mt-1
-            block
-            w-full
-            rounded-md
-            border-gray-300
-            shadow-sm
-            focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
-          ">
+              mt-1
+              block
+              w-full
+              rounded-md
+              border-gray-300
+              shadow-sm
+              focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+            ">
           </label>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="max-w-full">
+        <div class="grid grid-cols-1 gap-6">
+          <h3 class="text-2xl font-bold border-b-2 border-gray-600">Contact Info</h3>
+          <ul class="flex flex-col gap-6">
+            <li *ngFor="let contact of contactInfo.list; let i = index" class="flex flex-row items-end gap-6">
+              <label class="block">
+                <span class="text-gray-700">Name</span>
+                <input type="text" placeholder="" name="name_{{i}}" [(ngModel)]="contact.name" class="
+                  mt-1
+                  block
+                  w-full
+                  rounded-md
+                  border-gray-300
+                  shadow-sm
+                  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+                ">
+              </label>
+              <label class="block">
+                <span class="text-gray-700">Value</span>
+                <input type="text" placeholder="" name="value_{{i}}" [(ngModel)]="contact.value" class="
+                  mt-1
+                  block
+                  w-full
+                  rounded-md
+                  border-gray-300
+                  shadow-sm
+                  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
+                ">
+              </label>
+              <button type="button" (click)="removeContactInfo(i)" class="px-4 py-2 rounded border border-rose-600">
+                Remove
+              </button>
+            </li>
+          </ul>
+          <div>
+            <button type="button" class="px-4 py-2 rounded border border-gray-600" (click)="addNewContactInfo()">
+              Add New
+            </button>
+          </div>
         </div>
       </div>
 
