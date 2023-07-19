@@ -26,7 +26,7 @@ export interface Intro {
 export interface Employment {
   duration: string;
   jobTitle: string;
-  responsibilities: string[];
+  responsibilities: string;
 }
 
 export interface EmploymentHistory {

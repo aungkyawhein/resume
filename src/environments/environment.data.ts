@@ -26,26 +26,26 @@ export const data = {
       {
         duration: '01/2020 — Present',
         jobTitle: 'Web Developer at [Example] Pte Ltd',
-        responsibilities: [
-          'Developed and maintained responsive websites using HTML, CSS, and JavaScript.',
-          'Implemented front-end frameworks such as Angular, React, or Vue.js to enhance user interfaces and improve user experiences.',
-          'Collaborated with design teams to translate wireframes and mockups into functional web pages.',
-          'Built and optimized server-side applications and APIs using languages like Node.js or PHP.',
-          'Utilized version control systems (e.g., Git) to manage codebase and collaborate with team members.',
-          'Stayed updated with emerging web development trends and technologies to continuously improve skills and deliver cutting-edge solutions.',
-        ]
+        responsibilities: `<ul>
+          <li>Developed and maintained responsive websites using HTML, CSS, and JavaScript.</li>
+          <li>Implemented front-end frameworks such as Angular, React, or Vue.js to enhance user interfaces and improve user experiences.</li>
+          <li>Collaborated with design teams to translate wireframes and mockups into functional web pages.</li>
+          <li>Built and optimized server-side applications and APIs using languages like Node.js or PHP.</li>
+          <li>Utilized version control systems (e.g., Git) to manage codebase and collaborate with team members.</li>
+          <li>Stayed updated with emerging web development trends and technologies to continuously improve skills and deliver cutting-edge solutions.</li>
+        </ul>`
       },
       {
         duration: '01/2018 — 12/2020',
         jobTitle: 'Web Developer at [Example 2] Pte Ltd',
-        responsibilities: [
-          'Implemented database systems (e.g., MySQL, MongoDB) to store and retrieve data for web applications.',
-          'Ensured cross-browser compatibility and responsiveness across different devices and platforms.',
-          'Conducted thorough testing and debugging to identify and resolve issues or errors in web applications.',
-          'Integrated third-party APIs and services to enhance the functionality of web applications.',
-          'Implemented security best practices to safeguard web applications against potential vulnerabilities.',
-          'Collaborated with cross-functional teams, including designers, project managers, and stakeholders, to successfully deliver web projects on time and within budget.',
-        ]
+        responsibilities: `
+          Implemented database systems (e.g., MySQL, MongoDB) to store and retrieve data for web applications.
+          Ensured cross-browser compatibility and responsiveness across different devices and platforms.
+          Conducted thorough testing and debugging to identify and resolve issues or errors in web applications.
+          Integrated third-party APIs and services to enhance the functionality of web applications.
+          Implemented security best practices to safeguard web applications against potential vulnerabilities.
+          Collaborated with cross-functional teams, including designers, project managers, and stakeholders, to successfully deliver web projects on time and within budget.
+        `
       },
     ]
   },
