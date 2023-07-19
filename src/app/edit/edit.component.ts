@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ContactInfo, Data, Education, Employment, EmploymentHistory, Intro, Skills } from '../data.model';
+import { ContactInfo, Data, Education, EmploymentHistory, Intro, Skills } from '../data.model';
 import { DataService } from '../data.service';
 
 @Component({
@@ -85,20 +85,12 @@ export class EditComponent {
     this.employmentHistory.list.push({
       duration: '',
       jobTitle: '',
-      responsibilities: ['']
+      responsibilities: ''
     });
   }
 
   removeEmployment(index: number): void {
     this.employmentHistory.list.splice(index, 1);
-  }
-
-  addResponsibility(job: Employment): void {
-    job.responsibilities.push('');
-  }
-
-  removeResponsibility(job: Employment, index: number): void {
-    job.responsibilities.splice(index, 1);
   }
 
   onSkillsUpdate(): void {

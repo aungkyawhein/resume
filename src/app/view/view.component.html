@@ -52,11 +52,7 @@
         </div>
         <div class="w-3/4">
           <h3 class="font-bold">{{employment.jobTitle}}</h3>
-          <ul class="list-disc list-inside ps-4">
-            <li class="my-2 text-gray-500" *ngFor="let responsibility of employment.responsibilities">
-              {{responsibility}}
-            </li>
-          </ul>
+          <div class="text-gray-500 mt-1" [innerHTML]="employment.responsibilities"></div>
         </div>
       </div>
     </div>
