@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
+
+declare const html2pdf: () => any;
 
 @Injectable({
   providedIn: 'root',
 })
 export class PdfService {
   generatePDF(content: HTMLElement, filename: string): void {
-    html2canvas(content).then((canvas) => {
-      const imageData = canvas.toDataURL('image/png');
-      const doc = new jsPDF('p', 'mm', 'a4');
+    const options = {
+      margin: 10,
+      filename: filename,
+      image: { type: 'png', quality: 1 },
+      html2canvas: { scale: 2, scrollX: 0, scrollY: 0 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    };
 
-      doc.addImage(imageData, 'PNG', 10, 10, 190, 0);
-      doc.save(filename);
-    });
+    html2pdf().from(content).set(options).save();
   }
 }
