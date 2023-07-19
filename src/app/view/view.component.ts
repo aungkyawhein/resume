@@ -65,7 +65,7 @@ export class ViewComponent {
     this.skills = skills;
   }
 
-  generatePDF(): void {
+  downloadPDF(): void {
     const pageContent = this.pdfContent.nativeElement;
     const filename = this.name + '.pdf';
     this.pdfService.generatePDF(pageContent, filename);
