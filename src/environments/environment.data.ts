@@ -1,5 +1,5 @@
 export const data = {
-  name: 'John',
+  name: 'John Wick',
   jobTitle: 'Web Developer',
   logo: '',
   contactInfo: {
